@@ -1,0 +1,159 @@
+<!doctype html>
+<html amp lang="en"> <!-- required -->
+  <head> <!-- head tag required -->
+    <meta charset="utf-8"> <!-- must be first child of head tag -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script> <!-- must be second child of head tag -->
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" /> <!-- must point to the regular version of the html or to itself if there is none -->
+
+    <!-- if there is a regular HTML version of the page, put this in its head <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html"> 
+    and this in the head of the amp page <link rel="canonical" href="https://www.example.com/url/to/full/document.html"> -->
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> <!-- required; "initial-scale=1" is recommended but not required -->
+    
+     <!-- this part is required if you want your content to appear in certain places, for instance Google search news carousel -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script> 
+    <!-- /required -->
+
+
+    <!-- all stuff here is required -->
+    <style amp-boilerplate> 
+        body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+          -moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+          -ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+          animation:-amp-start 8s steps(1,end) 0s 1 normal both}
+          @-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+          @-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+          @-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+          @-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+          @keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+          </style>
+          <noscript>
+          <style amp-boilerplate>
+          body{-webkit-animation:none;-moz-animation:none;
+            -ms-animation:none;animation:none}
+      </style>
+      </noscript>
+      <!-- /required -->
+
+      <!-- this part is needed to embed youtube videos -->
+      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
+      <!-- script for carousel -->
+      <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
+      <!-- just a font -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+
+      <!-- put all styles in the head using <style amp-custom></style>  -->
+      <style amp-custom>
+        body {
+          padding-left:90px;
+          padding-right:90px;
+          padding-bottom: 50px;
+          font-family: 'Oswald';
+      }
+        h1 {
+          color: blue;
+        }
+
+        h2 {
+          color:purple;
+        }
+
+        h3 {
+          color: red;
+        }
+        a {
+          text-decoration:none;
+          color: black;
+        }
+        a:hover {
+          color: red;
+        }
+      </style>
+
+
+      <!-- each AMP page cannot reference external stylesheets, with the exception of custom fonts https://www.ampproject.org/docs/guides/responsive/custom_fonts -->
+      <!-- inline styles are not allowed -->
+
+      <!-- CAN use preprocessors, something like this:   
+          <style amp-custom>
+            {% include "/assets/css/main.min.css" %}
+          </style> -->
+      
+      <!-- more on AMP styling: https://www.ampproject.org/docs/guides/responsive/style_pages -->
+
+  </head>
+
+  <body> <!-- body tag required -->
+    <h1>AMP Test</h1>
+
+    <h2>Regular image</h2>
+    <amp-img src="http://www.rd.com/wp-content/uploads/sites/2/2016/04/01-cat-wants-to-tell-you-laptop.jpg" alt="cat" height="500" width="800"></amp-img>
+
+
+    <h2>Image with layout="responsive" (fits width of container and resizes with window)</h2>
+    <amp-img src="http://www.rd.com/wp-content/uploads/sites/2/2016/04/01-cat-wants-to-tell-you-laptop.jpg" width="1378" height="918" layout="responsive" alt="cat"></amp-img>
+   
+    <!-- more on the layout attribute: https://www.ampproject.org/docs/guides/responsive/control_layout -->
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ultrices nibh. Integer metus mi, condimentum at ipsum nec, ornare fermentum dolor. Pellentesque viverra dignissim ultricies. Phasellus id mattis tellus, accumsan ultricies enim. Nulla ut tellus eu dui gravida accumsan nec ut urna. Aliquam iaculis arcu enim, nec sodales libero consectetur id. Aliquam quis pharetra nibh. Ut ipsum ante, lobortis in arcu vel, volutpat egestas lacus. Phasellus nec vulputate orci.</p>
+
+    <p>Nam lacinia lacus vel lorem sodales, id luctus turpis vestibulum. Vestibulum fermentum ullamcorper congue. Maecenas a ligula odio. Vestibulum nisl felis, vestibulum eget ornare non, efficitur ac arcu. Maecenas vel urna nec sapien aliquet sollicitudin. Pellentesque felis ex, placerat a venenatis ac, elementum vel ipsum. Vestibulum quis elementum mauris. Proin aliquet vitae nisl et venenatis. Integer ipsum orci, facilisis ut gravida non, tincidunt non arcu. Morbi eget varius diam. Proin aliquam facilisis nisl, sit amet vulputate nisi euismod ut. In sed neque convallis, scelerisque nibh at, rutrum diam. Sed blandit convallis neque eu auctor. Maecenas at mauris in eros molestie porttitor at sed mauris.</p>
+
+    <p>Nulla non vulputate diam. Duis eu risus maximus, consequat risus in, facilisis sapien. Vivamus in ultrices quam. Ut fringilla, velit eu posuere molestie, enim nunc dignissim nunc, a imperdiet tortor massa et justo. Donec gravida sollicitudin pharetra. Proin vitae purus luctus urna sollicitudin blandit vestibulum quis dolor. Etiam eget fermentum enim. Aenean imperdiet tortor vel metus luctus ornare pulvinar et sem. Sed sed laoreet tortor.</p>
+
+    <h2>Embedded Responsive Youtube</h2>
+    <amp-youtube
+      data-videoid="vCk8ub1vltg"
+      layout="responsive"
+      width="480" height="270">
+    </amp-youtube>
+    <br /><br/>
+
+    <h2>Hey, a readymade carousel!</h2>
+    <amp-carousel width=300 height=400 type="slides" loop>
+        <amp-img src="https://assets.rbl.ms/4143308/980x.jpg" width=300 height=400></amp-img>
+        <amp-img src="https://sociorocketnewsen.files.wordpress.com/2013/10/maru-top.jpg" width=300 height=400></amp-img>
+        <amp-img src="http://i1.kym-cdn.com/entries/icons/original/000/000/923/maru-cat-grass1.jpg" width=300 height=400></amp-img>
+    </amp-carousel>
+
+    <h2>Please read this HTML's comments for more info</h2>
+    <h3>Also: lots more cool stuff that AMP can do, check it out here: <a href="https://www.ampproject.org/docs/reference/components">https://www.ampproject.org/docs/reference/components</a>
+    <br />
+    and code examples here: <a href="https://www.ampbyexample.com/">https://www.ampbyexample.com/</a></h3>
+
+  </body>
+</html>
+
+
+<!-- more on AMP in google search: https://developers.google.com/search/docs/guides/mark-up-content#use-amp-html -->
+<!-- more examples of meta data for various social sharing: https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples -->
+<!-- allowed and disallowed tags: https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md -->
+<!-- preview and validate before publishing: https://www.ampproject.org/docs/get_started/create/preview_and_validate -->
+<!-- CSS Tricks article with loading times https://css-tricks.com/taking-amp-for-a-spin/ -->
+
+<!--
+Thoughts on AMP: 
+Seems pretty straightforward. Likely going to be important for SEO in the future, or maybe now. 
+I like that you don't have to re-work the HTML you already have, you can create separate AMP pages and then link them. 
+I could see it being fairly straightforward to convert once a template is created if, for instance, 
+you're making AMP pages for several articles of similar type. 
+
+AMP doesn't allow any other JS as far as I can tell. So that's a thing to keep in mind. 
+
+I like all the stuff that AMP can embed, but you have to put another script for each thing in the head. 
+Maybe not an issue since AMP pages by default load a bit faster than regular ones. 
+
+ -->
